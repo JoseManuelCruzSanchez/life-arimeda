@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form#formulario-encuesta{
+            max-width: 550px;
+            margin: auto;
+        }
+        #formulario-encuesta input[type="text"], input[type="number"], textarea{
+            border: 1.8px solid #0000ec;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        #formulario-encuesta input[type="number"]{
+            width: 50px;
+        }
+        /*#formulario-encuesta input[type="text"]{
+            width: 100%;
+        }*/
+        p#titulo-encuesta{
+            color: darkgray;
+            border-top: 1.8px solid #006aec;
+            border-bottom: 1.8px solid #006aec;
+            padding: .5em 0;
+        }
+        p.azul, label.azul{
+            color: #006aec;
+            font-weight: bold;
+        }
+        .texto-grisaceo{
+            color: darkgrey;
+            font-weight: bold;
+        }
+
+        .texto-grisaceo-oscurito{
+            color: #6b6b6b;
+            font-weight: bold;
+            border-bottom: 1.8px solid #006aec;
+        }
+        div.input-aclaraciones > div{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario-encuesta" action="guardar-encuesta-bbdd.php" method="post">
+        <p id="titulo-encuesta">Le rogamos conteste a esta breve encuesta.</p>
+        <p class="azul">Es usted:</p>
+        <div>
+            <label class="texto-grisaceo"><input type="checkbox">Ganadero</label>
+            <label class="texto-grisaceo"><input type="checkbox">Agricultor</label>
+            <label class="texto-grisaceo"><input type="checkbox">Administración</label>
+            <label class="texto-grisaceo"><input type="checkbox">Centro de investigación</label>
+        </div>
+        <div>
+            <label class="texto-grisaceo"><input type="checkbox">Educación</label>
+            <label class="texto-grisaceo"><input type="checkbox">Técnico</label>
+            <label class="texto-grisaceo"><input type="checkbox">Tecnología y equipos</label>
+        </div>
+
+        <div class="input-aclaraciones">
+            <div>
+                <label class="texto-grisaceo">Otros</label>
+            </div>
+            <div>
+                <input type="text">
+            </div>
+
+        </div>
+
+
+        <p class="azul">Su edad está comprendida en el siguiente rango:</p>
+
+        <label class="texto-grisaceo"><input type="checkbox">25-35 años</label>
+        <label class="texto-grisaceo"><input type="checkbox">36-45 años</label>
+        <label class="texto-grisaceo"><input type="checkbox">46-55 años</label>
+        <label class="texto-grisaceo"><input type="checkbox">más de 56</label>
+
+        <p class="azul">¿Conoce el Programa LIFE de cofinanciación europea de proyectos en materia de medio ambiente?</p>
+
+        <label class="texto-grisaceo"><input type="checkbox">Si</label>
+        <label class="texto-grisaceo"><input type="checkbox">No</label>
+        <label class="texto-grisaceo">¿Cómo?<input type="text"></label>
+
+        <p class="texto-grisaceo">Valore del 0 al 10 (0 la puntuación más baja, 10 la más alta) las siguientes cuestiones:</p>
+
+        <p class="texto-grisaceo-oscurito">PERCEPCIÓN SOBRE ASPECTOS AMBIENTALES</p>
+        <label class="azul">1. Cómo valora la importancia de preservar el medio ambiente<input type="number" min="0" max="10"></label>
+        <label class="azul">2. Cómo valora la importancia del impacto en el medio ambiente de la gestión del purín: emisiones de amoniaco, materia particulada, gases de efecto invernadero, nitratos en el agua, metales pesados, etc.<input type="number" min="0" max="10"></label>
+        <label class="azul">3. Qué importancia considera que tiene la problemática de la gestión de purines en Aragón<input type="number" min="0" max="10"></label>
+        <label class="azul">4. Cómo valora las consecuencias para la salud del impacto medioambiental de la gestión de purines<input type="number" min="0" max="10"></label>
+
+        <p class="texto-grisaceo-oscurito">PROYECTO LIFE ARIMEDA</p>
+        <label class="azul">5. Cómo valora en general el proyecto LIFE ARIMEDA<input type="number" min="0" max="10"></label>
+        <label class="azul">6. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora ambiental en las zonas agrícolas mediterráneas<input type="number" min="0" max="10"></label>
+        <label class="azul">7. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora de la sostenibilidad y al desarrollo técnico y económico del sector agroganadero<input type="number" min="0" max="10"></label>
+
+        <p class="azul">Está interesado en recibir información sobre el desarrollo del proyecto?</p>
+        <label><input type="checkbox">Si</label>
+        <label><input type="checkbox">No</label>
+
+        <p class="azul">¿Por qué medios?</p>
+        <label><input type="checkbox">Página web</label>
+        <label><input type="checkbox">Twiter</label>
+        <label><input type="checkbox">Newsletters (email)</label>
+        <label>Otros</label><input type="text">
+
+        <p class="azul">Observaciones y sugerencias:</p>
+        <textarea></textarea>
+
+        <p class="azul">MUCHAS GRACIAS POR SU COLABORACIÓN</p>
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
