@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        #contenedor-general{
+            padding: 5em;
+            box-sizing: border-box;
+        }
         form#formulario-encuesta{
-            max-width: 550px;
-            margin: auto;
+            min-width: 350px;
+            font-size: 1.6vw;
+            /*max-width: 550px;
+            margin: auto;*/
+        }
+
+        #formulario-encuesta table{
+            width: 100%;
         }
         #formulario-encuesta input[type="text"], input[type="number"], textarea{
             border: 1.8px solid #0000ec;
@@ -16,6 +26,9 @@
         }
         #formulario-encuesta input[type="number"]{
             width: 50px;
+        }
+        #formulario-encuesta input[type="checkbox"]{
+            margin-right: .5vw;
         }
         /*#formulario-encuesta input[type="text"]{
             width: 100%;
@@ -40,80 +53,181 @@
             font-weight: bold;
             border-bottom: 1.8px solid #006aec;
         }
+        div.input-aclaraciones{
+            margin-top: 1em;
+        }
         div.input-aclaraciones > div{
             display: inline-block;
+        }
+        div.input-aclaraciones > div:first-child{
+            width: 10%;
+        }
+        div.input-aclaraciones > div:last-child{
+            width: 89%;
+        }
+        div.input-aclaraciones > div:last-child > input[type="text"]{
+            width: 100%;
+        }
+        td{
+            padding: 0;
+            padding-right: 2vw;
+        }
+
+        #formulario-encuesta textarea{
+            width: 100%;
+            height: 10em;
+        }
+
+        #formulario-encuesta #seccion-enviar{
+            padding: 1em 0;
+        }
+
+        #formulario-encuesta #seccion-enviar p{
+            display: inline-block;
+        }
+
+        #formulario-encuesta #seccion-enviar input[type="submit"]{
+            background-color: #0a008c;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            float: right;
+            vertical-align: middle;
+        }
+        .otros-aclaraciones-1 input{
+            width: 112%;
+        }
+        .otros-aclaraciones-2 input[type="text"]{
+            width: 105%;
+        }
+        .otros-aclaraciones-3 input{
+            width: 121%;
+        }
+        table.frases-puntucion tr{
+            height: 3em;
         }
     </style>
 </head>
 <body>
+<div id="contenedor-general">   
     <form id="formulario-encuesta" action="guardar-encuesta-bbdd.php" method="post">
         <p id="titulo-encuesta">Le rogamos conteste a esta breve encuesta.</p>
+
         <p class="azul">Es usted:</p>
-        <div>
-            <label class="texto-grisaceo"><input type="checkbox">Ganadero</label>
-            <label class="texto-grisaceo"><input type="checkbox">Agricultor</label>
-            <label class="texto-grisaceo"><input type="checkbox">Administración</label>
-            <label class="texto-grisaceo"><input type="checkbox">Centro de investigación</label>
-        </div>
-        <div>
-            <label class="texto-grisaceo"><input type="checkbox">Educación</label>
-            <label class="texto-grisaceo"><input type="checkbox">Técnico</label>
-            <label class="texto-grisaceo"><input type="checkbox">Tecnología y equipos</label>
-        </div>
-
-        <div class="input-aclaraciones">
-            <div>
-                <label class="texto-grisaceo">Otros</label>
-            </div>
-            <div>
-                <input type="text">
-            </div>
-
-        </div>
+        <table>
+            <tr>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-ganadero">Ganadero</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-agricultor">Agricultor</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-administracion">Administración</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-centro-investigacion">Centro de investigación</label></td>
+            </tr>
+            <tr>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-educacion">Educación</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-tecnico">Técnico</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="profesion-tecnologia-equipos">Tecnología y equipos</label></td>
+                <td></td>
+            </tr>
+            <tr class="otros-aclaraciones-1">
+                <td><p class="texto-grisaceo">Otros</p></td>
+                <td colspan="3"><input type="text" name="profesion-otros"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 
 
         <p class="azul">Su edad está comprendida en el siguiente rango:</p>
-
-        <label class="texto-grisaceo"><input type="checkbox">25-35 años</label>
-        <label class="texto-grisaceo"><input type="checkbox">36-45 años</label>
-        <label class="texto-grisaceo"><input type="checkbox">46-55 años</label>
-        <label class="texto-grisaceo"><input type="checkbox">más de 56</label>
+        <table>
+            <tr>
+                <td><label class="texto-grisaceo"><input type="radio" name="edad" value="25-35">25-35 años</label></td>
+                <td><label class="texto-grisaceo"><input type="radio" name="edad" value="36-45">36-45 años</label></td>
+                <td><label class="texto-grisaceo"><input type="radio" name="edad" value="46-55">46-55 años</label></td>
+                <td><label class="texto-grisaceo"><input type="radio" name="edad" value="mas-56">más de 56</label></td>
+            </tr>
+        </table>
 
         <p class="azul">¿Conoce el Programa LIFE de cofinanciación europea de proyectos en materia de medio ambiente?</p>
-
-        <label class="texto-grisaceo"><input type="checkbox">Si</label>
-        <label class="texto-grisaceo"><input type="checkbox">No</label>
-        <label class="texto-grisaceo">¿Cómo?<input type="text"></label>
+        <table>
+            <tr class="otros-aclaraciones-2">
+                <td><label class="texto-grisaceo"><input type="radio" name="conoce-life-arimeda" value="si">Si</label></td>
+                <td><label class="texto-grisaceo"><input type="radio" name="conoce-life-arimeda" value="no">No</label></td>
+                <td><label class="texto-grisaceo">¿Cómo?</label></td>
+                <td><input type="text" name="como-conoce-life"></td>
+            </tr>
+        </table>
 
         <p class="texto-grisaceo">Valore del 0 al 10 (0 la puntuación más baja, 10 la más alta) las siguientes cuestiones:</p>
 
         <p class="texto-grisaceo-oscurito">PERCEPCIÓN SOBRE ASPECTOS AMBIENTALES</p>
-        <label class="azul">1. Cómo valora la importancia de preservar el medio ambiente<input type="number" min="0" max="10"></label>
-        <label class="azul">2. Cómo valora la importancia del impacto en el medio ambiente de la gestión del purín: emisiones de amoniaco, materia particulada, gases de efecto invernadero, nitratos en el agua, metales pesados, etc.<input type="number" min="0" max="10"></label>
-        <label class="azul">3. Qué importancia considera que tiene la problemática de la gestión de purines en Aragón<input type="number" min="0" max="10"></label>
-        <label class="azul">4. Cómo valora las consecuencias para la salud del impacto medioambiental de la gestión de purines<input type="number" min="0" max="10"></label>
+        <table class="frases-puntucion">
+            <tr>
+                <td><label class="azul">1. Cómo valora la importancia de preservar el medio ambiente</label></td>
+                <td><input type="number" min="0" max="10" name="aa-importancia-preservar"></td>
+            </tr>
+            <tr>
+                <td><label class="azul">2. Cómo valora la importancia del impacto en el medio ambiente de la gestión del purín: emisiones de amoniaco, materia particulada, gases de efecto invernadero, nitratos en el agua, metales pesados, etc.</label></td>
+                <td><input type="number" min="0" max="10" name="aa-gestion-purin-derivados"></td>
+            </tr>
+            <tr>
+                <td><label class="azul">3. Qué importancia considera que tiene la problemática de la gestión de purines en Aragón</label></td>
+                <td><input type="number" min="0" max="10" name="aa-gestion-purin"></td>
+            </tr>
+            <tr>
+                <td><label class="azul">4. Cómo valora las consecuencias para la salud del impacto medioambiental de la gestión de purines</label></td>
+                <td><input type="number" min="0" max="10" name="aa-consecuencias-salud"></td>
+            </tr>
+        </table>        
 
         <p class="texto-grisaceo-oscurito">PROYECTO LIFE ARIMEDA</p>
-        <label class="azul">5. Cómo valora en general el proyecto LIFE ARIMEDA<input type="number" min="0" max="10"></label>
-        <label class="azul">6. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora ambiental en las zonas agrícolas mediterráneas<input type="number" min="0" max="10"></label>
-        <label class="azul">7. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora de la sostenibilidad y al desarrollo técnico y económico del sector agroganadero<input type="number" min="0" max="10"></label>
+        <table class="frases-puntucion">
+            <tr>
+                <td><label class="azul">5. Cómo valora en general el proyecto LIFE ARIMEDA</label></td>
+                <td><input type="number" min="0" max="10" name="pla-valoracion-general"></td>
+            </tr>
+            <tr>
+                <td><label class="azul">6. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora ambiental en las zonas agrícolas mediterráneas</label></td>
+                <td><input type="number" min="0" max="10" name="pla-contribucion-zonas-agricolas-mediterraneas"></td>
+            </tr>
+            <tr>
+                <td><label class="azul">7. En qué medida cree que el proyecto LIFE ARIMEDA puede contribuir a la mejora de la sostenibilidad y al desarrollo técnico y económico del sector agroganadero</label></td>
+                <td><input type="number" min="0" max="10" name="pla-sostenibilidad-desarrollo"></td>
+            </tr>
+        </table>       
+        
+        <br>
 
         <p class="azul">Está interesado en recibir información sobre el desarrollo del proyecto?</p>
-        <label><input type="checkbox">Si</label>
-        <label><input type="checkbox">No</label>
-
-        <p class="azul">¿Por qué medios?</p>
-        <label><input type="checkbox">Página web</label>
-        <label><input type="checkbox">Twiter</label>
-        <label><input type="checkbox">Newsletters (email)</label>
-        <label>Otros</label><input type="text">
+        <table>
+            <tr>
+                <td><label class="texto-grisaceo"><input type="radio" name="rn" value="si">Si</label></td>
+                <td><label class="texto-grisaceo"><input type="radio" name="rn" value="no">No</label></td>
+                <td><p class="azul">¿Por qué medios?</p></td>
+            </tr>
+            <tr>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="rn-web">Página web</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="rn-twiter">Twiter</label></td>
+                <td><label class="texto-grisaceo"><input type="checkbox" name="rn-email">Newsletters (email)</label></td>
+            </tr>
+            <tr class="otros-aclaraciones-3">
+                <td><p class="texto-grisaceo">Otros</p></td>
+                <td colspan="3"><input type="text" name="rn-otros"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>        
 
         <p class="azul">Observaciones y sugerencias:</p>
-        <textarea></textarea>
-
-        <p class="azul">MUCHAS GRACIAS POR SU COLABORACIÓN</p>
-        <input type="submit" value="ENVIAR">
+        <textarea name="textarea-observaciones"></textarea>
+        <div id="seccion-enviar">
+            <p class="azul">MUCHAS GRACIAS POR SU COLABORACIÓN</p>
+            <input type="submit" value="ENVIAR">
+        </div>
+        
     </form>
+</div> 
 </body>
 
 

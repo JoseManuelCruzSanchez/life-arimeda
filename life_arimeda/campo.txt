@@ -1,0 +1,39 @@
+
+  $datos['id_usuario'],
+  $datos['fecha'],
+  $datos['profesion_ganadero'],
+  $datos['rofesion-agricultor'],
+  $datos['profesion-administracion'],
+  $datos['profesion-centro-investigacion'],
+  $datos['profesion-educacion'],
+  $datos['profesion-tecnico'],
+  $datos['profesion-tecnologia-equipos'],
+  $datos['profesion-otros'],
+  $datos['edad'],
+  $datos['conoce-life-arimeda'],
+  $datos['como-conoce-life'],
+  $datos['aa-importancia-preservar'],
+  $datos['aa-gestion-purin-derivados'],
+  $datos['aa-gestion-purin'],
+  $datos['aa-consecuencias-salud'],
+  $datos['pla-valoracion-general'],
+  $datos['pla-contribucion-zonas-agricolas-mediterraneas'],
+  $datos['pla-sostenibilidad-desarrollo'],
+  $datos['rn'],
+  $datos['rn-web'],
+  $datos['rn-twiter'],
+  $datos['rn-email'],
+  $datos['rn-otros'],
+  $datos['textarea-observaciones']
+
+
+
+
+
+  INSERT INTO encuesta (
+
+
+      				    id_usuario, fecha, profesion_ganadero, profesion_agricultor, profesion_administracion, profesion_centro_investigacion, profesion_educacion, profesion_tecnico, profesion_tecnologia_equipos, profesion_otros, edad, conoce_life_arimeda, como_conoce_life, aa_importancia_preservar, aa_gestion_purin_derivados, aa_gestion_purin, aa_consecuencias_salud, pla_valoracion_general, pla_contribucion_zonas_agricolas_mediterraneas, pla_sostenibilidad_desarrollo, rn, rn_web, rn_twiter, rn_email, rn_otros, textarea_observaciones
+
+                        )
+                        VALUES ("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
