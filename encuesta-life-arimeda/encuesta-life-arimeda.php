@@ -12,7 +12,7 @@ require ('includes/crear-shortcodes.php');
 
 /********  CREAR MENU PARA DESCARGAR CSV    ************/
 function crear_menu(){
-    add_menu_page('Descarga CSV', 'descarga_csv', 'activate_plugins', 'descarga_csv', 'funcion_descarga');
+    add_menu_page('Descarga CSV', 'Descarga Encuesta', 'activate_plugins', 'descarga_csv', 'funcion_descarga', '', 7);
 }
 add_action('admin_menu', 'crear_menu');
 
