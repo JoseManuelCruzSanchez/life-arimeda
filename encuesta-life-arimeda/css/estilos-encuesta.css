@@ -1,0 +1,212 @@
+/***********  FORMULARIO ENCUESTA ***********************/
+#contenedor-general{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#contenedor-general form#formulario-encuesta{
+    min-width: 330px;
+    font-size: 1em;
+    /*max-width: 550px;
+    margin: auto;*/
+}
+
+#formulario-encuesta table{
+    width: 100%;
+}
+#formulario-encuesta input[type="text"], input[type="number"]{
+    border: 1.8px solid #0a008c;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#formulario-encuesta textarea{
+    border: 1.8px solid #0a008c;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#formulario-encuesta input[type="number"]{
+    width: 70px;
+}
+#formulario-encuesta input[type="checkbox"]{
+    margin-right: .5vw;
+}
+/*#formulario-encuesta input[type="text"]{
+    width: 100%;
+}*/
+p#titulo-encuesta{
+    color: darkgray;
+    border-top: 1.8px solid #0a008c;
+    border-bottom: 1.8px solid #0a008c;
+    padding: .5em 0;
+    font-weight: bold;
+}
+#contenedor-general p.azul, label.azulado{
+    color: #0a008c;
+    font-weight: bold;
+    margin: 1em 0;
+}
+#contenedor-general .texto-grisaceo{
+    color: darkgrey;
+    font-weight: bold;
+}
+
+#contenedor-general .texto-grisaceo-oscurito{
+    color: #6b6b6b;
+    font-weight: bold;
+    border-bottom: 1.8px solid #0a008c;
+}
+div.input-aclaraciones{
+    margin-top: 1em;
+}
+div.input-aclaraciones > div{
+    display: inline-block;
+}
+div.input-aclaraciones > div:first-child{
+    width: 10%;
+}
+div.input-aclaraciones > div:last-child{
+    width: 89%;
+}
+div.input-aclaraciones > div:last-child > input[type="text"]{
+    width: 100%;
+}
+#contenedor-general td{
+    padding: 0;
+    padding-right: 2vw;
+}
+
+#formulario-encuesta textarea{
+    width: 96%;
+    height: 10em;
+}
+
+#formulario-encuesta #seccion-enviar{
+    padding: 1em 0;
+}
+
+#formulario-encuesta #seccion-enviar p{
+    display: inline-block;
+}
+
+#formulario-encuesta #seccion-enviar input[type="submit"]{
+    background-color: #0a008c;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    vertical-align: middle;
+}
+.otros-aclaraciones-1 input{
+    width: 112%;
+}
+.otros-aclaraciones-2 input[type="text"]{
+    width: 100%;
+}
+.otros-aclaraciones-3 input{
+    width: 121%;
+}
+table.frases-puntucion tr{
+    height: 3em;
+}
+
+#formulario-encuesta td{
+    vertical-align: middle;
+    border-bottom: none;
+}
+
+#formulario-encuesta #seccion-enviar p {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+
+
+@media only screen and (max-width: 700px){
+    #contenedor-general{
+        margin-top: 5em;
+    }
+    #formulario-encuesta td{
+        display: block;
+    }
+
+    #formulario-encuesta .frases-puntucion td{
+        display: table-cell;
+    }
+
+    .otros-aclaraciones-1 input {
+        width: 100%;
+    }
+
+    .otros-aclaraciones-3 input {
+        width: 100%;
+    }
+
+    #formulario-encuesta textarea {
+        width: 98%;
+    }
+
+    .otros-aclaraciones-1 p, .otros-aclaraciones-3 p{
+        margin-top: 1em;
+    }
+
+    .otros-aclaraciones-2 td:nth-child(3){
+        margin-top: 1em;
+    }
+
+    tr.fila-espacio-vacio{
+        height: 0px;
+    }
+
+}
+
+
+div#mensaje-solicitud-encuesta{
+    background-color: #0e4194;
+    padding: 1em 1.5em;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+div#mensaje-solicitud-encuesta button{
+    background-color: #a3b92a;
+    border: none;
+    color: #0a008c;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+div#mensaje-solicitud-encuesta p{
+    margin-bottom: .3em;
+}
+
+div#mensaje-solicitud-encuesta button{
+    margin-top: 1em;
+}
+
+div#mensaje-solicitud-encuesta button a{
+    color: #0e4194;
+}
+
+.fila-espacio-vacio{
+    height: 2em;
+}
+
+@media only screen and (max-width: 1000px){
+    table#tabla-profesion-encuestado td{
+        display: block;
+    }
+}
+
+/***********  FIN FORMULARIO ENCUESTA ***********************/
