@@ -74,11 +74,11 @@ div.input-aclaraciones > div:last-child > input[type="text"]{
 }
 #contenedor-general td{
     padding: 0;
-    padding-right: 2vw;
+    /*padding-right: 2vw; Comento esta linea porque descuadra todo*/
 }
 
 #formulario-encuesta textarea{
-    width: 96%;
+    width: 100%;
     height: 10em;
 }
 
@@ -124,11 +124,28 @@ table.frases-puntucion tr{
     margin-top: 1em;
 }
 
+#formulario-encuesta .frases-puntucion input{
+    float: right;
+}
+
+#formulario-encuesta .frases-puntucion .region td:first-child{
+    padding-left: 3vw;
+}
+
+#formulario-encuesta .frases-puntucion .region input{
+    width: 10vw;
+}
+
+table.frases-puntucion{
+    /*Para separar las filas un poco que están muy pegadas*/
+    border-collapse: separate;
+    border-spacing: 0 9px;
+}
 
 
 @media only screen and (max-width: 700px){
     #contenedor-general{
-        margin-top: 5em;
+        margin-top: 3em;
     }
     #formulario-encuesta td{
         display: block;
@@ -160,6 +177,26 @@ table.frases-puntucion tr{
 
     tr.fila-espacio-vacio{
         height: 0px;
+    }
+
+    #formulario-encuesta .frases-puntucion input{
+        float: none;
+    }
+
+    #formulario-encuesta .frases-puntucion .region td:first-child{
+        display: block;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    #formulario-encuesta .frases-puntucion .region td:last-child{
+        display: block;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    #formulario-encuesta .frases-puntucion .region input{
+        width: 126%;
     }
 
 }

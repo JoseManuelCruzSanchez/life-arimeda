@@ -17,7 +17,7 @@ function generar_archivo_csv(){
     $data = json_decode(json_encode($wpdb->get_results("select * from encuesta"), true));
 
     //echo '<pre>' . var_export($data, true) . '</pre>';
-    $encabezados = array("id","id_usuario","fecha","profesion_ganadero","profesion_agricultor","profesion_administracion","profesion_centro_investigacion","profesion_educacion","profesion_tecnico","profesion_tecnologia_equipos","profesion_otros","edad","conoce_life_arimeda","como_conoce_life","aa_importancia_preservar","aa_gestion_purin_derivados","aa_gestion_purin","aa_consecuencias_salud","pla_valoracion_general","pla_contribucion_zonas_agricolas_mediterraneas","pla_sostenibilidad_desarrollo","rn","rn_web","rn_twiter","rn_email","rn_otros","textarea_observaciones");
+    $encabezados = array("id","id_usuario","fecha","idioma","region","profesion_ganadero","profesion_agricultor","profesion_administracion","profesion_centro_investigacion","profesion_educacion","profesion_tecnico","profesion_tecnologia_equipos","profesion_otros","edad","conoce_life_arimeda","como_conoce_life","aa_importancia_preservar","aa_gestion_purin_derivados","aa_gestion_purin","aa_consecuencias_salud","pla_valoracion_general","pla_contribucion_zonas_agricolas_mediterraneas","pla_sostenibilidad_desarrollo","rn","rn_web","rn_twiter","rn_email","rn_otros","textarea_observaciones");
     $array_matriz = array();
 
     foreach ($data as $fila){

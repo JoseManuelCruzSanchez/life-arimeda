@@ -8,11 +8,15 @@ Author: Cruz Estudio
 Author URI: https://cruzestudio.es/
 License: GPLv2 o posterior
 */
+
+defined('ABSPATH') or die('La seguridad es lo primero');
+
 require ('includes/crear-shortcodes.php');
 
 /********  CREAR MENU PARA DESCARGAR CSV    ************/
 function crear_menu(){
-    add_menu_page('Descarga CSV', 'Descarga Encuesta', 'activate_plugins', 'descarga_csv', 'funcion_descarga', '', 7);
+    add_menu_page('Descarga CSV', 'Descarga Encuesta', 'activate_plugins', 'descarga_csv', 'funcion_descarga', '
+dashicons-download', 7);
 }
 add_action('admin_menu', 'crear_menu');
 

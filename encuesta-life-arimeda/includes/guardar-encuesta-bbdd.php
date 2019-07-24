@@ -11,6 +11,14 @@ require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 global $wpdb;
 global $current_user;
 
+$id_usuario = get_current_user_id();
+$ha_rellenado_encuesta = $wpdb->get_results("select * from encuesta where id_usuario like $id_usuario");
+
+if( $ha_rellenado_encuesta ){
+    wp_redirect(home_url());
+    die;
+}
+
 $tabla_encuesta = 'encuesta';
 $datos = crear_array_desde_formulario_encuesta();
 $resultado = $wpdb->insert($tabla_encuesta, $datos);
@@ -20,6 +28,16 @@ wp_redirect(home_url());
 function crear_array_desde_formulario_encuesta(){
     $datos['id_usuario'] = get_current_user_id();
     $datos['fecha'] = (new DateTime('now'))->format('Y-m-d H:i:s');
+
+    $datos['idioma'] = '';
+    $datos['region'] = '';
+    if(isset($_REQUEST['idioma'])){
+        $datos['idioma'] = $_REQUEST['idioma'];
+    }
+    if(isset($_REQUEST['region'])){
+        $datos['region'] = $_REQUEST['region'];
+    }
+
 
     $datos['profesion_ganadero'] = '';
     $datos['profesion_agricultor'] = '';
@@ -107,7 +125,7 @@ function crear_array_desde_formulario_encuesta(){
     $datos['rn_web'] = "";
     $datos['rn_twiter'] = "";
     $datos['rn_email'] = "";
-    $datos['rn_otros'] = "";
+    $datos['rn_otros'] = "falla";
 
     if(isset($_REQUEST['rn'])){
         $datos['rn'] = $_REQUEST['rn'];
