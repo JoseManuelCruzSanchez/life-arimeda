@@ -1,0 +1,26 @@
+.cont-enlace-descarga-excel{
+    display: inline-block;
+    padding: 1em;
+    margin: 50px;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.enlace-descarga-csv:focus{
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+}
+
+.cont-enlace-descarga-excel > p{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c7b1e;
+}
+
+#info-usuarios-contestan-encuesta{
+    margin-left: 50px;
+    font-weight: bold;
+    color: #2c7b1e;
+    font-size: 3.5em;
+}
